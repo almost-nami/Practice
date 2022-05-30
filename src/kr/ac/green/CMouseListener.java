@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
 import javax.swing.border.LineBorder;
 
+//Container를 상속받은 하위클래스만 W가 됨
 public class CMouseListener<W extends Container> extends MouseAdapter {
 	private W owner;
 	
@@ -50,6 +51,7 @@ public class CMouseListener<W extends Container> extends MouseAdapter {
 		}
 	}
 	private void setBorder(MouseEvent me, boolean flag) {
+		// Component에는 Border없음 ! JComponent에서 Border생김 !
 		JComponent c = (JComponent)me.getComponent();
 		if(flag) {
 			c.setBorder(new LineBorder(Color.GREEN, 2, true));
