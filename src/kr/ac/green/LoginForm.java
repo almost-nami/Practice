@@ -99,9 +99,11 @@ public class LoginForm extends JFrame implements ActionListener {
 			JTextComponent input = null;
 			String msg = "welcom!!";
 			User user = null;
+			// tfId가 비어있을 때 true
 			if(LoginUtils.isEmpty(tfId)) {
 				msg = "input your Id";
 				input = tfId;
+			// tfId가 비어있지 않을 때 false -> input = null / msg = welcom / user = null 
 			} else {
 				if(LoginUtils.isEmpty(pfPw)) {
 					msg = "input your password";
